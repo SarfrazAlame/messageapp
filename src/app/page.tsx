@@ -1,8 +1,7 @@
-import Button from "@/components/ui/Button";
-import React from "react";
+import { db } from "@/lib/db";
 
-const page = () => {
-  return <Button>Hello</Button>;
-};
+export default async function Home() {
+  await db.set("hello", "hello");
 
-export default page;
+  return <div className="text-red-500">Hello World</div>;
+}
